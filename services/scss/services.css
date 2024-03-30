@@ -37,10 +37,7 @@ body {
   position: absolute;
   visibility: hidden;
 }
-.header__menu--visible-1120 {
-  display: none;
-}
-.header__container--visible-1120 {
+.header__extend-container--hidden {
   display: none;
 }
 
@@ -50,31 +47,23 @@ body {
 }
 
 .services {
-  margin: 0;
   width: 100%;
 }
 .services__body {
-  height: auto;
+  min-height: calc(100vh - 88px - 59px);
   padding-left: 16px;
   padding-top: 24px;
   padding-bottom: 35px;
   font-family: TTLakes-Regular;
   background-color: #F8F8F8;
 }
-.title {
-  width: 304px;
-  height: 40px;
+.services__title {
   position: relative;
-  font-size: 28px;
-  font-family: TTLakes-Bold;
-  color: #1B1C21;
-  font-weight: 900;
   padding-left: 16px;
   margin-left: -16px;
-  line-height: 40px;
-  letter-spacing: -0.6px;
+  margin-bottom: 24px;
 }
-.title::before {
+.services__title::before {
   position: absolute;
   content: "";
   top: 0px;
@@ -87,13 +76,22 @@ body {
   border-bottom-right-radius: 50px;
 }
 
+.title {
+  width: 304px;
+  height: 40px;
+  font-size: 28px;
+  font-family: TTLakes-Bold;
+  color: #1B1C21;
+  font-weight: 900;
+  line-height: 40px;
+  letter-spacing: -0.6px;
+}
+
 .slide-menu {
   box-sizing: border-box;
   display: flex;
   overflow: hidden;
-  margin-top: 24px;
-  margin-bottom: 9px;
-  height: 55px;
+  height: 64px;
 }
 .slide-menu__section {
   font-size: 16px;
@@ -119,37 +117,36 @@ body {
   scrollbar-width: thin;
 }
 
-.block1 {
+.descr-block {
   display: flex;
   flex-wrap: wrap;
 }
-.block1__about {
+.descr-block__about {
   width: 94.7%;
   font-size: 14px;
   font-family: TTLakes-Regular;
   letter-spacing: 0.2px;
   line-height: 18px;
 }
-.block1__image {
+.descr-block__image {
   margin-top: 16px;
-  margin-left: -16px;
+  margin-left: auto;
   width: 100%;
   min-width: 320px;
   max-width: 360px;
   height: auto;
 }
-.block1__image img {
+.descr-block__image img {
   width: 100%;
   height: auto;
 }
-.block1__about--hidden {
+.descr-block__about--hidden {
   display: none;
 }
 
-.readmore {
-  margin-top: 16px;
-}
 .readmore__text {
+  margin-top: 16px;
+  margin-bottom: 16px;
   height: 24px;
   font-family: TTLakes-Regular;
   font-weight: 600;
@@ -167,16 +164,6 @@ body {
 }
 
 @media (min-width: 768px) {
-  .services {
-    width: 100.13%;
-    padding-right: 15px;
-  }
-  .services__body {
-    box-sizing: border-box;
-    width: 100.13%;
-    margin: 0;
-    padding: 24px 25px 40px 24px;
-  }
   .header {
     box-sizing: border-box;
     padding: 0 24px;
@@ -219,20 +206,37 @@ body {
     position: relative;
     visibility: visible;
   }
-  .title {
+  .services {
+    padding-right: 15px;
+  }
+  .services__body {
+    box-sizing: border-box;
+    height: calc(100vh - 88px);
+    width: 100.13%;
+    margin: 0;
+    padding: 24px 25px 40px 24px;
+  }
+  .services__title {
     margin-left: -24px;
     margin-bottom: 32px;
+  }
+  .title {
     padding-left: 20px;
   }
-  .block1 {
-    height: 50%;
+  .slide-menu__section--box {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.200000003px;
+  }
+  .descr-block {
     flex-wrap: nowrap;
     padding: 0;
     justify-content: space-between;
   }
-  .block1__about {
-    width: 43.3%;
+  .descr-block__about {
+    width: 42.4%;
     height: 87%;
+    height: 30vh;
     line-height: 20px;
     letter-spacing: 0.200000003px;
     font-size: 14px;
@@ -240,35 +244,29 @@ body {
     display: flex;
     flex-direction: column;
   }
-  .block1__image {
-    width: 50%;
+  .descr-block__image {
+    width: 100%;
     margin: 0;
     min-width: 360px;
-    max-width: 450px;
   }
-  .block1__about--hidden {
+  .descr-block__about--hidden {
     margin: 0;
     width: 100%;
-    height: 12vh;
+    height: 100%;
+    min-height: 60px;
     max-height: 116px;
     overflow: hidden;
     display: inline-block;
     justify-self: flex-end;
   }
-  .slide-menu {
-    margin-right: -25px;
-    margin-bottom: 17px;
-  }
-  .slide-menu__section--box {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.200000003px;
-  }
   .readmore {
-    margin: 0;
-    margin-top: 10px;
     height: 24px;
     width: 200px;
+    overflow: visible;
+  }
+  .readmore__text {
+    margin-top: 10px;
+    margin-bottom: 0;
   }
 }
 @media (min-width: 1120px) {
@@ -278,10 +276,11 @@ body {
   .header__::before {
     margin-right: 30px;
   }
-  .header__container--visible-1120 {
+  .header__extend-container--hidden {
     display: flex;
     margin-left: auto;
     align-items: center;
+    margin-bottom: 8px;
   }
   .header__menu:first-child::after {
     border: none;
@@ -291,6 +290,9 @@ body {
   }
   .header__menu.button:first-child {
     margin-right: 32px;
+  }
+  .header__menu.button:last-child {
+    margin-right: 7px;
   }
   .header__menu.button:nth-child(n)::after {
     display: none;
@@ -304,58 +306,74 @@ body {
     font-family: TTLakes-Regular;
     font-weight: bold;
   }
-  .group_1120 {
+  .heading-block {
     display: flex;
     width: 100%;
     max-width: 1440px;
     flex-wrap: wrap;
     align-items: center;
   }
+  .services {
+    padding: 0;
+  }
   .services__body {
     padding: 42px 25px 49px 34px;
     max-width: 1440px;
-    min-height: 535px;
-    max-height: 535px;
+    height: 100vh;
   }
-  .title {
+  .services__title {
     margin: 0;
     margin-left: -34px;
     margin-bottom: 8px;
+    align-self: center;
+  }
+  .title {
     font-size: 28px;
     line-height: 40px;
     letter-spacing: -0.6000000238px;
     padding-left: 30px;
   }
   .slide-menu {
-    margin: 0;
     display: flex;
     flex-wrap: wrap;
-    height: 82px;
-    width: 97.85%;
-    margin-bottom: 16.22px;
+    height: auto;
+    width: 100%;
+    justify-content: space-between;
+    overflow: visible;
   }
   .slide-menu__section--box {
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.200000003px;
     padding: 8px 22px;
+    border: solid 2px transparent;
   }
-  .block1 {
+  .slide-menu__section--box:last-child {
+    margin-bottom: 16.22px;
+  }
+  slide-menu--hover-scroll::hover {
+    overflow: visible;
+  }
+  .descr-block {
     width: 100%;
     height: 307px;
-    margin: 0;
   }
-  .block1__about {
+  .descr-block__about {
     width: 46%;
-    height: 160px;
+    height: auto;
     margin-right: 36px;
   }
-  .block1__image {
+  .descr-block__image {
     width: 48.59%;
-    max-width: 531.35px;
+    max-width: 600.35px;
+    min-width: 531.35px;
   }
-  .block1__about--hidden {
+  .descr-block__about--hidden {
     overflow: visible;
     width: 100%;
+  }
+  .readmore__text {
+    margin: 0;
+    margin-top: 13.78px;
   }
 }/*# sourceMappingURL=services.css.map */
