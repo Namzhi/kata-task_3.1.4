@@ -13,11 +13,12 @@ body {
 }
 
 .header {
-    display: flex;
-    align-items: center;
     height: 88px;
     font-size: 0px;
-    padding: 0 16px;
+
+    &--padding {
+        padding: 0 16px;
+    }
 
     &__menu.button {
         display: flex;
@@ -27,25 +28,39 @@ body {
         margin: 0;
         margin-right: 20px;
     }
-    &__menu:first-child{
+
+    &__menu:first-child {
         margin-right: 16.73px;
     }
+
     &__menu:nth-child(2)::after {
         content: "";
         display: inline-block;
         width: 2px;
         height: 32px;
-        background-color:#EAEAEA;
+        background-color: #EAEAEA;
         margin-left: 16.73px;
     }
-    &__menu:last-child{
+
+    &__menu:last-child {
         margin-right: 0;
     }
+
     &__menu--hidden {
         position: absolute;
         visibility: hidden;
     }
 
+    &--container-flex {
+        display: flex;
+        align-items: center;
+    }
+    &__extend-container--hidden {
+        display: none;
+    }
+}
+
+.heading-block {
     &__extend-container--hidden {
         display: none;
     }
@@ -57,11 +72,9 @@ body {
 }
 
 .services {
-    width: 100%;
-
     &__body {
+        width: 100%;
         min-height: calc(100vh - 88px - 59px);
-        padding-left: 16px;
         padding-top: 24px;
         padding-bottom: 35px;
         font-family: TTLakes-Regular;
@@ -69,13 +82,16 @@ body {
     }
 
     &__title {
+        font-size: 28px;
         position: relative;
         padding-left: 16px;
         margin-left: -16px;
+        margin-left: 0;
         margin-bottom: 24px;
     }
 
     &__title::before {
+
         position: absolute;
         content: "";
         top: 0px;
@@ -86,6 +102,7 @@ body {
         border-width: 2px;
         border-top-right-radius: 50px;
         border-bottom-right-radius: 50px;
+
     }
 }
 
@@ -93,7 +110,6 @@ body {
 .title {
     width: 304px;
     height: 40px;
-    font-size: 28px;
     font-family: TTLakes-Bold;
     color: #1B1C21;
     font-weight: 900;
@@ -102,10 +118,9 @@ body {
 }
 
 .slide-menu {
-    box-sizing: border-box;
-    display: flex;
-    overflow: hidden;
+    //box-sizing: border-box;
     height: 64px;
+    padding-left: 16px;
 
     &__section {
         font-size: 16px;
@@ -115,30 +130,35 @@ body {
         text-wrap: nowrap;
         color: #7E7E82;
         background-color: transparent;
-    }
-
-    &__section--box {
         border: none;
         padding: 8px 16.5px;
     }
 
-    &__section--box:focus {
+
+    &__section:focus {
         border: solid 2px #B8FFEC;
         border-radius: 5px;
         background-color: white;
     }
+
+    &--container-flex {
+        display: flex;
+    }
+
+    &--hidden {
+        overflow: hidden;
+    }
+
+    &--hover-scroll:hover {
+        overflow: auto;
+        scrollbar-width: thin;
+    }
 }
 
-.slide-menu--hover-scroll:hover {
-    overflow: auto;
-    scrollbar-width: thin;
-}
 
 .description-block {
-    display: flex;
-    flex-wrap: wrap;
-
     &__about {
+        margin-left: 16px;
         width: 94.7%;
         font-size: 14px;
         font-family: TTLakes-Regular;
@@ -152,7 +172,9 @@ body {
         width: 100%;
         min-width: 320px;
         height: auto;
+        //margin-left: -16px;
     }
+
     &__image img {
         width: 100%;
         height: auto;
@@ -160,6 +182,12 @@ body {
 
     &__about--hidden {
         display: none;
+    }
+
+
+    &--container-flex {
+        display: flex;
+        flex-wrap: wrap;
     }
 }
 
@@ -188,9 +216,12 @@ body {
 
 @media (min-width: 768px) {
     .header {
-        box-sizing: border-box;
-        padding: 0 24px;
-        width: 100%;
+        //box-sizing: border-box;
+
+        //width: 100%;
+        &--padding {
+            padding: 0 24px;
+        }
 
         &__menu.button {
             margin-right: 16px;
@@ -198,7 +229,7 @@ body {
 
         &__menu:first-child {
             margin-right: 20.73px;
-            
+
         }
 
         &__menu:nth-child(1)::after {
@@ -207,7 +238,7 @@ body {
             padding: 0;
             width: 2px;
             height: 32px;
-            background-color:#EAEAEA;
+            background-color: #EAEAEA;
             margin-left: 20px;
             align-self: center;
         }
@@ -225,7 +256,7 @@ body {
             display: inline-block;
             width: 2px;
             height: 32px;
-            background-color:#EAEAEA;
+            background-color: #EAEAEA;
             margin-left: 20px;
             margin-right: 4px;
             align-self: center;
@@ -239,10 +270,15 @@ body {
             position: relative;
             visibility: visible;
         }
-        
+
     }
+
     .services {
-        padding-right: 15px;
+
+        //
+        &--padding-right {
+            padding-right: 15px;
+        }
 
         &__body {
             box-sizing: border-box;
@@ -252,28 +288,31 @@ body {
             padding: 24px 25px 40px 24px;
         }
 
-        &__title{
-            margin-left: -24px; 
+        &__title {
+            margin-left: -24px;
             margin-bottom: 32px;
+            padding-left: 20px;
         }
     }
-    
-    .title {
-        padding-left: 20px;
-    }
+
+
     .slide-menu {
 
-        &__section--box {
+        &__section {
             font-size: 16px;
             line-height: 24px;
             letter-spacing: -0.20000000298023224px;
         }
     }
-    .description-block {
-        flex-wrap: nowrap;
-        padding: 0;
-        justify-content: space-between;
 
+    .description-block {
+        
+
+        &--container-flex {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+        }
         &__about {
             width: 42.4%;
             height: 87%;
@@ -284,12 +323,17 @@ body {
             text-align: left;
             display: flex;
             flex-direction: column;
+            min-width: 312px;
+            margin-right: 48px;
         }
 
         &__image {
             width: 100%;
             margin: 0;
             min-width: 360px;
+            max-width: 531.35px;
+            margin-left: auto;
+
         }
 
         &__about--hidden {
@@ -305,9 +349,9 @@ body {
     }
 
     .readmore {
-        height: 24px;
-        width: 200px;
-        overflow: visible;
+        //height: 24px;
+        //width: 200px;
+        //overflow: visible;
 
         &__text {
             margin-top: 10px;
@@ -318,26 +362,20 @@ body {
 
 @media(min-width: 1120px) {
     .header {
-        display: none;
 
         &__::before {
             margin-right: 30px;
         }
 
-        &__extend-container--hidden {
-            display: flex;
-            margin-left: auto;
-            align-items: center;
-            margin-bottom: 8px;
-        }
+
 
         &__menu:first-child::after {
             border: none;
         }
 
         &__menu.button {
-            display: flex; 
-            
+            display: flex;
+
         }
 
         &__menu.button:first-child {
@@ -361,74 +399,128 @@ body {
             font-family: TTLakes-Regular;
             font-weight: bold;
         }
+        &--hidden {
+            display: none;
+            //margin-bottom: 8px;
+        }
+        // 
     }
+
 
     .heading-block {
-        display: flex;
-        width: 100%;
-        max-width: 1440px;
-        flex-wrap: wrap;
-        align-items: center;
+
+        &--container-flex {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            max-width: 1440px;
+            justify-content: space-between;
+        }
+
+        &__menu {
+            //vertical-align: middle;
+            display: flex;
+            //display: inline-block;
+
+        }
+
+        &__menu:first-child {
+            margin-right: 20px;
+        }
+
+        &__action {
+            align-self: center;
+            margin-right: 8px;
+        }
+
+        &__extend-container--hidden {
+            display: flex;
+        }
+
     }
+
+
+
     .services {
-        padding: 0;
+
+        //padding: 0;
+        &--padding-right {
+            padding: 0;
+        }
 
         &__body {
-        padding: 42px 25px 49px 34px;
-        max-width: 1440px;
-        height: calc(100vh);
+            padding: 42px 25px 49px 34px;
+            max-width: 1440px;
+            height: calc(100vh);
         }
 
-        &__title{
-            margin:0;
-        margin-left: -34px;
-        margin-bottom: 8px;
-        align-self: center;
+        &__title {
+            margin: 0;
+            margin-left: -34px;
+            margin-bottom: 8px;
+            align-self: center;
+            font-size: 28px;
+            line-height: 40px;
+            //letter-spacing: -0.6000000238418579px;
+            padding-left: 30px;
         }
     }
 
-    .title {
-        font-size: 28px;
-        line-height: 40px;
-        letter-spacing: -0.6000000238418579px;
-        padding-left: 30px;
-    }
-    
+
     .slide-menu {
-        display: flex;
-        flex-wrap: wrap;
-        height: auto;
-        width: 100%;
-        justify-content: space-between;
-        overflow: visible;
+        //display: flex;
+        //flex-wrap: wrap;
+        //height: auto;
+        //width: 100%;
+        //
+        //overflow: visible;
 
-        &__section--box {
+        &__section {
             font-size: 16px;
             line-height: 24px;
             letter-spacing: -0.20000000298023224px;
-            padding: 8px 22px;
+            padding: 8px 19px;
             border: solid 2px transparent;
+            //vertical-align: middle;
         }
 
-        &__section--box:last-child {
+        &__section:last-child {
             margin-bottom: 16.22px;
         }
+
+        &--hover-scroll:hover {
+            overflow: visible;
+
+            //white-space: wrap;
+        }
+
+        &--container-flex {
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        &--height-auto {
+            height: auto;
+        }
     }
 
-    slide-menu--hover-scroll::hover{
-        overflow: visible;
-    }
+    // .slide-menu--height-auto{
+    //     height: auto;
+    // }
+    //slide-menu--hover-scroll::hover {
+    //     overflow: visible;
+    //}
 
     .description-block {
-        width: 100%;
-        height: 307px;
+        //width: 100%;
+        //height: 307px;
 
         &__about {
-            width: 46%;
+            //width: 46%;
             height: auto;
-            margin-right: 36px; 
+            margin-right: 36px;
         }
-        
+
         &__image {
             width: 48.59%;
             max-width: 600.35px;
@@ -440,9 +532,9 @@ body {
             width: 100%;
         }
     }
-    
-    .readmore__text{
-        margin:0;
+
+    .readmore__text {
+        margin: 0;
         margin-top: 13.78px;
     }
-    }
+}
