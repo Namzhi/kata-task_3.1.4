@@ -172,7 +172,6 @@ body {
         width: 100%;
         min-width: 320px;
         height: auto;
-        //margin-left: -16px;
     }
 
     &__image img {
@@ -192,7 +191,6 @@ body {
 }
 
 .readmore {
-
     &__text {
         margin-top: 16px;
         margin-bottom: 16px;
@@ -216,9 +214,6 @@ body {
 
 @media (min-width: 768px) {
     .header {
-        //box-sizing: border-box;
-
-        //width: 100%;
         &--padding {
             padding: 0 24px;
         }
@@ -274,8 +269,6 @@ body {
     }
 
     .services {
-
-        //
         &--padding-right {
             padding-right: 15px;
         }
@@ -297,7 +290,6 @@ body {
 
 
     .slide-menu {
-
         &__section {
             font-size: 16px;
             line-height: 24px;
@@ -306,8 +298,6 @@ body {
     }
 
     .description-block {
-        
-
         &--container-flex {
             display: flex;
             flex-wrap: nowrap;
@@ -349,10 +339,6 @@ body {
     }
 
     .readmore {
-        //height: 24px;
-        //width: 200px;
-        //overflow: visible;
-
         &__text {
             margin-top: 10px;
             margin-bottom: 0;
@@ -362,12 +348,9 @@ body {
 
 @media(min-width: 1120px) {
     .header {
-
         &__::before {
             margin-right: 30px;
         }
-
-
 
         &__menu:first-child::after {
             border: none;
@@ -401,14 +384,11 @@ body {
         }
         &--hidden {
             display: none;
-            //margin-bottom: 8px;
         }
-        // 
     }
 
 
     .heading-block {
-
         &--container-flex {
             display: flex;
             flex-wrap: wrap;
@@ -442,8 +422,6 @@ body {
 
 
     .services {
-
-        //padding: 0;
         &--padding-right {
             padding: 0;
         }
@@ -461,27 +439,18 @@ body {
             align-self: center;
             font-size: 28px;
             line-height: 40px;
-            //letter-spacing: -0.6000000238418579px;
             padding-left: 30px;
         }
     }
 
 
     .slide-menu {
-        //display: flex;
-        //flex-wrap: wrap;
-        //height: auto;
-        //width: 100%;
-        //
-        //overflow: visible;
-
         &__section {
             font-size: 16px;
             line-height: 24px;
             letter-spacing: -0.20000000298023224px;
             padding: 8px 19px;
             border: solid 2px transparent;
-            //vertical-align: middle;
         }
 
         &__section:last-child {
@@ -490,8 +459,6 @@ body {
 
         &--hover-scroll:hover {
             overflow: visible;
-
-            //white-space: wrap;
         }
 
         &--container-flex {
@@ -504,17 +471,7 @@ body {
         }
     }
 
-    // .slide-menu--height-auto{
-    //     height: auto;
-    // }
-    //slide-menu--hover-scroll::hover {
-    //     overflow: visible;
-    //}
-
     .description-block {
-        //width: 100%;
-        //height: 307px;
-
         &__about {
             //width: 46%;
             height: auto;
