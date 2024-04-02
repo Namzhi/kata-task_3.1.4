@@ -14,7 +14,6 @@ body {
 
 .header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     height: 88px;
     font-size: 0px;
@@ -26,17 +25,22 @@ body {
         block-size: auto;
         padding: 0;
         margin: 0;
+        margin-right: 20px;
     }
-
+    &__menu:first-child{
+        margin-right: 16.73px;
+    }
     &__menu:nth-child(2)::after {
         content: "";
         display: inline-block;
-        border-left: solid #EAEAEA;
         width: 2px;
         height: 32px;
+        background-color:#EAEAEA;
         margin-left: 16.73px;
     }
-
+    &__menu:last-child{
+        margin-right: 0;
+    }
     &__menu--hidden {
         position: absolute;
         visibility: hidden;
@@ -130,7 +134,7 @@ body {
     scrollbar-width: thin;
 }
 
-.descr-block {
+.description-block {
     display: flex;
     flex-wrap: wrap;
 
@@ -147,7 +151,6 @@ body {
         margin-left: auto;
         width: 100%;
         min-width: 320px;
-        max-width: 360px;
         height: auto;
     }
     &__image img {
@@ -187,23 +190,25 @@ body {
     .header {
         box-sizing: border-box;
         padding: 0 24px;
-        width: 100.13%;
+        width: 100%;
 
         &__menu.button {
             margin-right: 16px;
         }
 
         &__menu:first-child {
-            margin-right: 20px;
+            margin-right: 20.73px;
+            
         }
 
         &__menu:nth-child(1)::after {
             content: "";
             display: inline-block;
-            border-left: solid #EAEAEA;
+            padding: 0;
             width: 2px;
             height: 32px;
-            margin-left: 18px;
+            background-color:#EAEAEA;
+            margin-left: 20px;
             align-self: center;
         }
 
@@ -212,16 +217,17 @@ body {
         }
 
         &__menu:nth-child(2)::after {
-            border: none;
+            display: none;
         }
 
         &__menu:nth-child(5)::after {
             content: "";
             display: inline-block;
-            border-left: solid #EAEAEA;
             width: 2px;
             height: 32px;
+            background-color:#EAEAEA;
             margin-left: 20px;
+            margin-right: 4px;
             align-self: center;
         }
 
@@ -263,7 +269,7 @@ body {
             letter-spacing: -0.20000000298023224px;
         }
     }
-    .descr-block {
+    .description-block {
         flex-wrap: nowrap;
         padding: 0;
         justify-content: space-between;
@@ -346,7 +352,7 @@ body {
             display: none;
         }
 
-        &__descr {
+        &__action {
             display: inline-block;
             align-self: center;
             margin-right: 8px;
@@ -413,7 +419,7 @@ body {
         overflow: visible;
     }
 
-    .descr-block {
+    .description-block {
         width: 100%;
         height: 307px;
 
