@@ -38,7 +38,8 @@ body {
         width: 2px;
         height: 32px;
         background-color: #EAEAEA;
-        margin-left: 16.73px;
+        margin-left: 15.73px;
+        margin-right: 3px;
     }
 
     &__menu:last-child {
@@ -86,7 +87,6 @@ body {
     }
 
     &__title::before {
-
         position: absolute;
         content: "";
         top: 0px;
@@ -134,7 +134,6 @@ body {
         border-radius: 5px;
         background-color: white;
     }
-
 
     &--hidden {
         overflow: hidden;
@@ -282,11 +281,10 @@ body {
     }
 
     .description-block {
-        &--container-flex {
             display: flex;
             flex-wrap: nowrap;
             justify-content: space-between;
-        }
+        
         &__about {
             width: 42.4%;
             height: 87%;
@@ -402,7 +400,6 @@ body {
 
 
     .services {
-
         &__body {
             padding: 42px 25px 49px 34px;
             max-width: 1440px;
