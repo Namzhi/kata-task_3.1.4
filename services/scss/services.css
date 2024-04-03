@@ -13,17 +13,25 @@ body {
 .header {
   height: 88px;
   font-size: 0px;
-}
-.header--padding {
   padding: 0 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .header__menu.button {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   block-size: auto;
   padding: 0;
   margin: 0;
-  margin-right: 20px;
+  margin-right: 16px;
 }
 .header__menu:first-child {
   margin-right: 16.73px;
@@ -42,10 +50,6 @@ body {
 .header__menu--hidden {
   position: absolute;
   visibility: hidden;
-}
-.header--container-flex {
-  display: flex;
-  align-items: center;
 }
 .header__extend-container--hidden {
   display: none;
@@ -102,6 +106,9 @@ body {
 .slide-menu {
   height: 64px;
   padding-left: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 .slide-menu__section {
   font-size: 16px;
@@ -119,9 +126,6 @@ body {
   border-radius: 5px;
   background-color: white;
 }
-.slide-menu--container-flex {
-  display: flex;
-}
 .slide-menu--hidden {
   overflow: hidden;
 }
@@ -130,6 +134,13 @@ body {
   scrollbar-width: thin;
 }
 
+.description-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
 .description-block__about {
   margin-left: 16px;
   width: 94.7%;
@@ -152,10 +163,6 @@ body {
 .description-block__about--hidden {
   display: none;
 }
-.description-block--container-flex {
-  display: flex;
-  flex-wrap: wrap;
-}
 
 .readmore__text {
   margin-top: 16px;
@@ -165,8 +172,12 @@ body {
   font-weight: 600;
   font-size: 16px;
   letter-spacing: -0.2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .readmore__text::before {
   content: "";
@@ -177,7 +188,7 @@ body {
 }
 
 @media (min-width: 768px) {
-  .header--padding {
+  .header {
     padding: 0 24px;
   }
   .header__menu.button {
@@ -194,7 +205,8 @@ body {
     height: 32px;
     background-color: #EAEAEA;
     margin-left: 20px;
-    align-self: center;
+    -ms-flex-item-align: center;
+        align-self: center;
   }
   .header__menu:nth-child(2) {
     margin-right: auto;
@@ -210,7 +222,8 @@ body {
     background-color: #EAEAEA;
     margin-left: 20px;
     margin-right: 4px;
-    align-self: center;
+    -ms-flex-item-align: center;
+        align-self: center;
   }
   .header__menu:last-child {
     margin-right: 0;
@@ -219,11 +232,9 @@ body {
     position: relative;
     visibility: visible;
   }
-  .services--padding-right {
-    padding-right: 15px;
-  }
   .services__body {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     height: calc(100vh - 88px);
     width: 100.13%;
     margin: 0;
@@ -240,9 +251,14 @@ body {
     letter-spacing: -0.200000003px;
   }
   .description-block--container-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .description-block__about {
     width: 42.4%;
@@ -252,8 +268,13 @@ body {
     letter-spacing: 0.200000003px;
     font-size: 14px;
     text-align: left;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     min-width: 312px;
     margin-right: 48px;
   }
@@ -287,6 +308,8 @@ body {
     border: none;
   }
   .header__menu.button {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
   .header__menu.button:first-child {
@@ -300,7 +323,8 @@ body {
   }
   .header__action {
     display: inline-block;
-    align-self: center;
+    -ms-flex-item-align: center;
+        align-self: center;
     margin-right: 8px;
     line-height: 24px;
     letter-spacing: -0.200000003px;
@@ -310,28 +334,37 @@ body {
   .header--hidden {
     display: none;
   }
-  .heading-block--container-flex {
+  .heading-block {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     max-width: 1440px;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .heading-block__menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
   .heading-block__menu:first-child {
     margin-right: 20px;
   }
   .heading-block__action {
-    align-self: center;
+    -ms-flex-item-align: center;
+        align-self: center;
     margin-right: 8px;
   }
   .heading-block__extend-container--hidden {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-  }
-  .services--padding-right {
-    padding: 0;
   }
   .services__body {
     padding: 42px 25px 49px 34px;
@@ -342,10 +375,18 @@ body {
     margin: 0;
     margin-left: -34px;
     margin-bottom: 8px;
-    align-self: center;
+    -ms-flex-item-align: center;
+        align-self: center;
     font-size: 28px;
     line-height: 40px;
     padding-left: 30px;
+  }
+  .slide-menu {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .slide-menu__section {
     font-size: 16px;
@@ -359,10 +400,6 @@ body {
   }
   .slide-menu--hover-scroll:hover {
     overflow: visible;
-  }
-  .slide-menu--container-flex {
-    flex-wrap: wrap;
-    justify-content: space-between;
   }
   .slide-menu--height-auto {
     height: auto;

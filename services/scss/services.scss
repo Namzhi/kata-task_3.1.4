@@ -15,10 +15,9 @@ body {
 .header {
     height: 88px;
     font-size: 0px;
-
-    &--padding {
-        padding: 0 16px;
-    }
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
 
     &__menu.button {
         display: flex;
@@ -26,7 +25,7 @@ body {
         block-size: auto;
         padding: 0;
         margin: 0;
-        margin-right: 20px;
+        margin-right: 16px;
     }
 
     &__menu:first-child {
@@ -51,10 +50,6 @@ body {
         visibility: hidden;
     }
 
-    &--container-flex {
-        display: flex;
-        align-items: center;
-    }
     &__extend-container--hidden {
         display: none;
     }
@@ -118,10 +113,9 @@ body {
 }
 
 .slide-menu {
-    //box-sizing: border-box;
     height: 64px;
     padding-left: 16px;
-
+    display: flex;
     &__section {
         font-size: 16px;
         line-height: 24px;
@@ -141,9 +135,6 @@ body {
         background-color: white;
     }
 
-    &--container-flex {
-        display: flex;
-    }
 
     &--hidden {
         overflow: hidden;
@@ -157,6 +148,9 @@ body {
 
 
 .description-block {
+    display: flex;
+    flex-wrap: wrap;
+
     &__about {
         margin-left: 16px;
         width: 94.7%;
@@ -183,11 +177,6 @@ body {
         display: none;
     }
 
-
-    &--container-flex {
-        display: flex;
-        flex-wrap: wrap;
-    }
 }
 
 .readmore {
@@ -214,9 +203,7 @@ body {
 
 @media (min-width: 768px) {
     .header {
-        &--padding {
-            padding: 0 24px;
-        }
+        padding: 0 24px;
 
         &__menu.button {
             margin-right: 16px;
@@ -269,9 +256,6 @@ body {
     }
 
     .services {
-        &--padding-right {
-            padding-right: 15px;
-        }
 
         &__body {
             box-sizing: border-box;
@@ -389,18 +373,14 @@ body {
 
 
     .heading-block {
-        &--container-flex {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            max-width: 1440px;
-            justify-content: space-between;
-        }
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        max-width: 1440px;
+        justify-content: space-between;
 
         &__menu {
-            //vertical-align: middle;
             display: flex;
-            //display: inline-block;
 
         }
 
@@ -422,9 +402,6 @@ body {
 
 
     .services {
-        &--padding-right {
-            padding: 0;
-        }
 
         &__body {
             padding: 42px 25px 49px 34px;
@@ -445,6 +422,9 @@ body {
 
 
     .slide-menu {
+        flex-wrap: wrap;
+        justify-content: space-between;
+
         &__section {
             font-size: 16px;
             line-height: 24px;
@@ -461,11 +441,6 @@ body {
             overflow: visible;
         }
 
-        &--container-flex {
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-
         &--height-auto {
             height: auto;
         }
@@ -473,7 +448,6 @@ body {
 
     .description-block {
         &__about {
-            //width: 46%;
             height: auto;
             margin-right: 36px;
         }
